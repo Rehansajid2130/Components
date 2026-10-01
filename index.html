@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Mosaic Ripple Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <div class="stage-container" id="stage">
+    <!-- Ambient background decorations -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <header class="header">
+      <div class="badge">✨ Physical UI Component</div>
+      <h1 class="title">Mosaic Weight &amp; Ripple Button</h1>
+      <p class="subtitle">
+        Cursor weight depresses the 3D surface, nearby tiles illuminate, and clicks trigger water ripples.
+      </p>
+    </header>
+
+    <!-- Interactive Component Playground -->
+    <main class="playground">
+      <div class="button-perspective-wrapper" id="buttonWrapper">
+        <button class="mosaic-btn" id="mosaicBtn" aria-label="Get started">
+          <canvas class="mosaic-canvas" id="mosaicCanvas"></canvas>
+          <span class="btn-content">
+            <span class="btn-text" id="btnLabel">Get started</span>
+          </span>
+          <div class="specular-highlight"></div>
+        </button>
+      </div>
+
+      <div class="interaction-hint">
+        <span class="hint-icon">👆</span> Move cursor to feel button weight &bull; Click to create water waves
+      </div>
+    </main>
+
+    <!-- Controls Panel -->
+    <section class="controls-panel">
+      <div class="panel-header">
+        <h3>Customization &amp; Physics</h3>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+
+      <div class="controls-grid">
+        <div class="control-item">
+          <label for="labelInput">Button Text</label>
+          <input type="text" id="labelInput" value="Get started" maxlength="24">
+        </div>
+
+        <div class="control-item">
+          <div class="label-with-val">
+            <label for="weightSlider">Cursor Weight Force</label>
+            <span class="val-badge" id="weightVal">1.0x</span>
+          </div>
+          <input type="range" id="weightSlider" min="0.2" max="2.0" step="0.1" value="1.0">
+        </div>
+
+        <div class="control-item">
+          <div class="label-with-val">
+            <label for="tileSizeSlider">Block / Tile Size</label>
+            <span class="val-badge" id="tileSizeVal">5.5px</span>
+          </div>
+          <input type="range" id="tileSizeSlider" min="3" max="10" step="0.5" value="5.5">
+        </div>
+
+        <div class="control-item">
+          <div class="label-with-val">
+            <label for="rippleSpeedSlider">Water Wave Speed</label>
+            <span class="val-badge" id="rippleSpeedVal">Normal</span>
+          </div>
+          <input type="range" id="rippleSpeedSlider" min="0.5" max="2.0" step="0.1" value="1.0">
+        </div>
+
+        <div class="control-item toggles-row">
+          <label class="switch-container">
+            <input type="checkbox" id="soundToggle" checked>
+            <span class="switch-slider"></span>
+            <span class="switch-label">Water Droplet Sound (Web Audio)</span>
+          </label>
+          <label class="switch-container">
+            <input type="checkbox" id="shimmerToggle" checked>
+            <span class="switch-slider"></span>
+            <span class="switch-label">Ambient Shimmer</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Export snippet -->
+    <footer class="footer-info">
+      <details class="code-export-details">
+        <summary>View Integration Details &amp; Parameters</summary>
+        <div class="code-content">
+          <p>This button combines <strong>HTML5 Canvas 2D matrix rendering</strong> with <strong>CSS 3D Spring Physics</strong>:</p>
+          <ul>
+            <li><strong>Illumination Matrix:</strong> Cursor proximity dynamically lights up surrounding mosaic tiles into cyan and baby blue hues.</li>
+            <li><strong>Elastic Push-Back:</strong> Calculates continuous Euler tilt (X, Y) and Z-axis depression with damped spring physics to mimic physical mass.</li>
+            <li><strong>Wave Propagation:</strong> Multi-layered circular wavefronts with exponential decay create the aquatic shockwave upon click.</li>
+          </ul>
+        </div>
+      </details>
+    </footer>
+  </div>
+
+  <script src="mosaic-button.js?v=4"></script>
+</body>
+</html>

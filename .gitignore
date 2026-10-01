@@ -1,0 +1,50 @@
+# Video and Media Exports
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+*.wav
+*.mp3
+*.ogg
+
+# Video studio and brag files
+launch-video.*
+brag*
+brag-output/
+work/
+generate_voices.ps1
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs and runtime artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependencies
+node_modules/
+dist/
+build/
+.cache/
